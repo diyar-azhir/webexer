@@ -1,0 +1,20 @@
+RewriteEngine On
+RewriteBase /
+
+# Protect the htaccess file
+<Files .htaccess>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Protect dx.txt
+<Files "dx.txt">  
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Disable directory browsing
+Options All -Indexes
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
